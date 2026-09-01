@@ -1,0 +1,2 @@
+# Copy to .dev.vars and set the provider credential used by the server-side adapter.
+SANDBOX_API_KEY=

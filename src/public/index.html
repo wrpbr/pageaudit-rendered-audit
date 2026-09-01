@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<!-- GERADO por scripts/monta-ui.mjs — fonte: ui/. Não edite. npm run ui -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- GERADO por scripts/monta-seo.mjs — fonte: seo.config.js. Não edite. -->
+<title>PageAudit — Technical SEO page audit</title>
+<meta name="description" content="Instant technical SEO check: title, meta description, Open Graph, Twitter cards, headings, canonical and JSON-LD. Every URL you open stays as a saved tab.">
+<link rel="canonical" href="https://pageaudit.online/">
+<meta name="robots" content="index, follow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1a56db">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PageAudit">
+<meta property="og:title" content="PageAudit — Technical SEO page audit">
+<meta property="og:description" content="Instant technical SEO check: title, meta description, Open Graph, Twitter cards, headings, canonical and JSON-LD. Every URL you open stays as a saved tab.">
+<meta property="og:url" content="https://pageaudit.online/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pageaudit.online/og.png">
+<meta property="og:image:secure_url" content="https://pageaudit.online/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PageAudit — Instant technical SEO audit: title, meta, OG, headings, JSON-LD.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PageAudit — Technical SEO page audit">
+<meta name="twitter:description" content="Instant technical SEO check: title, meta description, Open Graph, Twitter cards, headings, canonical and JSON-LD. Every URL you open stays as a saved tab.">
+<meta name="twitter:image" content="https://pageaudit.online/og.png">
+<meta name="twitter:image:alt" content="PageAudit — Instant technical SEO audit: title, meta, OG, headings, JSON-LD.">
+
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Guia para agentes de IA">
+<link rel="alternate" type="text/markdown" href="/okf/index.md" title="Bundle OKF para agentes">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pageaudit.online/#organizacao",
+      "name": "PageAudit",
+      "url": "https://pageaudit.online/",
+      "logo": "https://pageaudit.online/icon.svg",
+      "email": "contato@pageaudit.online"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pageaudit.online/#site",
+      "url": "https://pageaudit.online/",
+      "name": "PageAudit",
+      "description": "Instant technical SEO check: title, meta description, Open Graph, Twitter cards, headings, canonical and JSON-LD. Every URL you open stays as a saved tab.",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://pageaudit.online/#organizacao"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://pageaudit.online/#app",
+      "name": "PageAudit",
+      "url": "https://pageaudit.online/",
+      "description": "Instant technical SEO check: title, meta description, Open Graph, Twitter cards, headings, canonical and JSON-LD. Every URL you open stays as a saved tab.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "en-US",
+      "provider": {
+        "@id": "https://pageaudit.online/#organizacao"
+      },
+      "featureList": [
+        "One-shot technical SEO audit",
+        "Saved tabs per URL",
+        "Shareable report and badge",
+        "Agent-first HTTP API with x402 billing",
+        "MCP server for agents"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free audit",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <!-- Origem absoluta: og:image/og:url/canonical precisam ser absolutos e esta
+       página é asset estático (sem Worker para injetar o host). Domínio canônico
+       = pageaudit.online; www e workers.dev servem o mesmo HTML e deferem via canonical. -->
+  <script src="/ga.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <script>
+    (function () {
+      try {
+        var s = localStorage.getItem('theme');
+        var t = s === 'light' || s === 'dark' ? s
+          : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-bs-theme', t);
+      } catch (_) {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+      }
+    })();
+  </script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+  <style>
+    :root, [data-bs-theme="light"] {
+      --pa-accent: #1a56db;
+      --pa-good: #0d7a4f;
+      --pa-warn: #9a6700;
+      --pa-bad: #b42318;
+    }
+    [data-bs-theme="dark"] {
+      --pa-accent: #6b9bff;
+      --pa-good: #3dd68c;
+      --pa-warn: #f0c14b;
+      --pa-bad: #ff7b86;
+    }
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1 0 auto; }
+    .app-container {
+      width: 100%;
+      max-width: none;
+      padding-left: clamp(1rem, 4vw, 4rem);
+      padding-right: clamp(1rem, 4vw, 4rem);
+    }
+    #quick-audit-actions .btn { white-space: nowrap; }
+    @media (max-width: 575.98px) {
+      #quick-audit-actions { width: 100%; flex-direction: column; }
+      #quick-audit-actions .btn { width: 100%; }
+    }
+    .navbar .btn-group .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      min-height: 2.5rem;
+    }
+    .navbar .btn-icon {
+      width: 2.5rem;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .nav-tabs .nav-link { display: inline-flex; align-items: center; gap: .4rem; }
+
+    /* Tab strip: one tab per open URL, horizontally scrollable, never wrapping. */
+    #tab-strip {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: thin;
+    }
+    #tab-strip .nav-item { flex: 0 0 auto; }
+    .pa-tab .nav-link,
+    .pa-rendered-tab .nav-link { padding-right: 2.15rem; }
+    .pa-tab-label {
+      display: inline-block;
+      max-width: 11rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: bottom;
+    }
+    .pa-tab-x {
+      position: absolute;
+      right: .4rem;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: .3rem;
+      --bs-btn-close-opacity: .4;
+    }
+    .pa-tab-x:hover, .pa-tab-x:focus { --bs-btn-close-opacity: 1; }
+    #tab-add {
+      display: inline-flex; align-items: center; gap: .35rem;
+      margin: .25rem .25rem .25rem .35rem;
+    }
+    #paywall-modal.paywall-is-dev .modal-content {
+      border: 2px solid #ffc107;
+      box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.28);
+    }
+    #paywall-modal.paywall-is-dev .modal-header {
+      background: linear-gradient(90deg, #664d03, #997404);
+      color: #fff;
+      border-bottom-color: #ffc107;
+    }
+    #paywall-modal.paywall-is-dev .modal-header .btn-close { filter: invert(1); }
+    #paywall-modal.paywall-is-dev .modal-header .text-body-secondary,
+    #paywall-modal.paywall-is-dev .modal-header #paywall-subtitle { color: rgba(255,255,255,.9) !important; }
+    #paywall-modal.paywall-is-dev .modal-body { background: rgba(255, 193, 7, 0.06); }
+
+    .score {
+      width: 4.5rem; height: 4.5rem; border-radius: 50%;
+      display: grid; place-items: center;
+      font-weight: 700; font-size: 1.25rem;
+      border: 2px solid var(--bs-border-color);
+    }
+    .score.good { border-color: var(--pa-good); color: var(--pa-good); }
+    .score.mid { border-color: var(--pa-warn); color: var(--pa-warn); }
+    .score.bad { border-color: var(--pa-bad); color: var(--pa-bad); }
+    .issue-list { list-style: none; padding: 0; margin: 0; }
+    .issue-list li {
+      display: flex; gap: .75rem; align-items: flex-start;
+      padding: .75rem 0; border-top: 1px solid var(--bs-border-color);
+    }
+    .tag {
+      font-size: .7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .04em; padding: .15rem .5rem; border-radius: 999px; flex: 0 0 auto;
+    }
+    .tag.error { background: color-mix(in srgb, var(--pa-bad) 18%, transparent); color: var(--pa-bad); }
+    .tag.warn { background: color-mix(in srgb, var(--pa-warn) 18%, transparent); color: var(--pa-warn); }
+    .tag.info { background: color-mix(in srgb, var(--pa-accent) 18%, transparent); color: var(--pa-accent); }
+    .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+    .turnstile-slot { min-height: 65px; }
+    pre.app-pre {
+      max-height: 280px; overflow: auto; font-size: .8rem;
+      background: var(--bs-tertiary-bg); border: 1px solid var(--bs-border-color);
+      border-radius: .5rem; padding: .75rem; margin: 0;
+    }
+    .check { border-top: 1px solid var(--bs-border-color); padding: .85rem 0; }
+    .check-head { display: flex; align-items: center; gap: .5rem; font-weight: 600; }
+    .check-head .bi { font-size: 1rem; }
+    .check-status {
+      margin-left: auto; font-size: .72rem; text-transform: uppercase; letter-spacing: .04em;
+      font-weight: 700; padding: .1rem .5rem; border-radius: 999px;
+      background: var(--bs-secondary-bg); color: var(--bs-secondary-color);
+    }
+    .check-ok .check-head .bi { color: var(--pa-good); }
+    .check-warn .check-head .bi { color: var(--pa-warn); }
+    .check-fail .check-head .bi { color: var(--pa-bad); }
+    .check-info .check-head .bi { color: var(--pa-accent); }
+    .check-val {
+      font-family: ui-monospace, monospace; font-size: .82rem; margin-top: .35rem;
+      word-break: break-word;
+    }
+    .check-val.missing { color: var(--bs-secondary-color); font-style: italic; font-family: inherit; }
+    .check-detail { font-size: .82rem; color: var(--bs-secondary-color); margin-top: .2rem; }
+    .check-why, .check-fix { font-size: .85rem; margin: .4rem 0 0; color: var(--bs-secondary-color); }
+    .check-fix { color: var(--bs-body-color); }
+    .btn i[class^="bi-"] { font-size: 1rem; line-height: 1; }
+    /* Favicon de terceiro: tamanho fixo para não deformar a strip com PNG grande. */
+    .pa-tab-favicon { width: 16px; height: 16px; object-fit: contain; border-radius: 2px; flex: 0 0 auto; }
+    [data-bs-theme="light"] .icon-moon { display: none !important; }
+    [data-bs-theme="dark"] .icon-sun { display: none !important; }
+    .text-status-error { color: var(--pa-bad); }
+    .pa-preview-img { aspect-ratio: 1.91 / 1; object-fit: cover; background: var(--bs-tertiary-bg); }
+    .pa-preview-ph {
+      aspect-ratio: 1.91 / 1; display: grid; place-items: center;
+      background: var(--bs-tertiary-bg); border-bottom: 1px solid var(--bs-border-color);
+    }
+    .pa-preview-title { font-size: .95rem; line-height: 1.3; }
+    .pa-preview-desc { color: var(--bs-secondary-color); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .pa-preview-card .missing { color: var(--bs-secondary-color); font-style: italic; font-weight: 400; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md border-bottom sticky-top bg-body">
+    <div class="container app-container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold" href="/">
+        <img src="/icon.svg" alt="" width="26" height="26" aria-hidden="true" />
+        <span>PageAudit</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 ms-auto">
+        <span id="auth-label" class="small text-body-secondary d-none d-sm-inline" hidden></span>
+        <span id="auth-trial" class="badge text-bg-success align-middle" hidden title="Trial: sign-up with confirmed email — free full access">
+          <i class="bi bi-lightning-charge" aria-hidden="true"></i> <span id="auth-trial-text"></span>
+        </span>
+        <div class="btn-group" role="group" aria-label="Account and theme">
+          <a class="btn btn-outline-secondary" href="/tools" title="Free single-check SEO tools">
+            <i class="bi bi-wrench-adjustable" aria-hidden="true"></i>
+            <span>Tools</span>
+          </a>
+          <button type="button" class="btn btn-outline-secondary" id="api-btn" title="API for agents">
+            <i class="bi bi-braces-asterisk" aria-hidden="true"></i>
+            <span>API</span>
+          </button>
+          <button type="button" class="btn btn-outline-secondary" id="auth-btn">
+            <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i>
+            <span>Sign in</span>
+          </button>
+          <button type="button" class="btn btn-outline-secondary" id="auth-logout" hidden>
+            <i class="bi bi-box-arrow-right" aria-hidden="true"></i>
+            <span>Sign out</span>
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-icon" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+            <i class="bi bi-sun-fill icon-sun" aria-hidden="true"></i>
+            <i class="bi bi-moon-stars-fill icon-moon" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="container app-container py-4">
+    <h1 class="h3 mb-2">Technical SEO page audit</h1>
+    <p class="text-body-secondary mb-2 col-lg-10">
+      Title, meta, Open Graph, headings, canonical, structured data. Every URL you open becomes a saved tab —
+      close the browser, come back later, your tabs and their results are still here.
+    </p>
+    <form id="quick-audit-form" class="my-4" novalidate>
+      <label class="form-label fw-semibold" for="quick-audit-url">URL to audit</label>
+      <div class="d-flex flex-column flex-md-row gap-2">
+        <div class="input-group input-group-lg flex-grow-1">
+          <span class="input-group-text"><i class="bi bi-link-45deg" aria-hidden="true"></i></span>
+          <input id="quick-audit-url" class="form-control" type="text" inputmode="url" required
+            autocomplete="url" placeholder="https://example.com/pricing" aria-describedby="quick-audit-help" />
+        </div>
+        <div class="d-flex gap-2" id="quick-audit-actions">
+          <button type="submit" class="btn btn-primary btn-lg" id="quick-audit-submit">
+            <i class="bi bi-play-fill" aria-hidden="true"></i> Audit page
+          </button>
+        </div>
+      </div>
+      <div class="form-text" id="quick-audit-help">Paste a public page URL. PageAudit opens it in a saved tab and starts immediately.</div>
+      <div class="alert alert-danger py-2 mt-2 mb-0" id="quick-audit-msg" role="alert" hidden></div>
+    </form>
+    <p class="small mb-0">
+      <i class="bi bi-robot text-body-secondary" aria-hidden="true"></i>
+      <strong>Agents:</strong> this UI is the human face of the same product.
+      Start at <a href="/api/" target="_blank" rel="noopener"><code>/api/</code></a>,
+      <a href="/llms.txt" target="_blank" rel="noopener"><code>/llms.txt</code></a>
+      or the <button type="button" class="btn btn-link btn-sm p-0 align-baseline" id="open-api-hub">API modal</button>.
+    </p>
+  </header>
+
+  <main class="container app-container pb-5">
+    <ul class="nav nav-tabs" id="tab-strip" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="tab-start" data-bs-toggle="tab" data-bs-target="#pane-start" type="button" role="tab" aria-controls="pane-start" aria-selected="true">
+          <i class="bi bi-house-door" aria-hidden="true"></i> Start
+        </button>
+      </li>
+      <li class="nav-item" role="presentation" id="tab-add-item">
+        <button class="btn btn-sm btn-primary" id="tab-add" type="button" title="Audit a new URL">
+          <i class="bi bi-plus-lg" aria-hidden="true"></i> New audit
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content border border-top-0 rounded-bottom p-3 p-md-4 bg-body-tertiary" id="tab-panes">
+      <div class="tab-pane fade show active" id="pane-start" role="tabpanel" aria-labelledby="tab-start" tabindex="0">
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <h2 class="h5">
+              <i class="bi bi-window-stack" aria-hidden="true"></i>
+              Your audit workspace
+            </h2>
+            <p class="text-body-secondary">
+              Add a URL and it opens as its own tab, labelled by domain. Tabs are stored on our side and
+              reloaded every time you come back — they only go away when you close them.
+            </p>
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary" id="start-new">
+                <i class="bi bi-plus-lg" aria-hidden="true"></i> New audit
+              </button>
+              <button type="button" class="btn btn-outline-secondary" id="start-reload" title="Reload tabs from the server">
+                <i class="bi bi-arrow-clockwise" aria-hidden="true"></i> Reload tabs
+              </button>
+            </div>
+            <p class="small text-body-secondary mt-3 mb-0" id="tabs-meta"></p>
+            <h3 class="h6 mt-4">
+              <i class="bi bi-wrench-adjustable" aria-hidden="true"></i>
+              Free single-check tools
+            </h3>
+            <p class="small text-body-secondary mb-2">One check each. Same auditor as a workspace tab.</p>
+            <ul class="list-unstyled small mb-0 d-flex flex-wrap gap-2">
+              <li><a href="/tools/title-tag-checker">Title tag</a></li>
+              <li><a href="/tools/meta-description-checker">Meta description</a></li>
+              <li><a href="/tools/canonical-tag-checker">Canonical</a></li>
+              <li><a href="/tools/h1-checker">H1</a></li>
+              <li><a href="/tools/viewport-checker">Viewport</a></li>
+              <li><a href="/tools/charset-checker">Charset</a></li>
+              <li><a href="/tools/robots-meta-checker">Robots meta</a></li>
+              <li><a href="/tools/open-graph-checker">Open Graph</a></li>
+              <li><a href="/tools/twitter-card-checker">X card</a></li>
+              <li><a href="/tools/json-ld-checker">JSON-LD</a></li>
+              <li><a href="/tools/serp-preview">SERP preview</a></li>
+              <li><a href="/tools/http-status-checker">HTTP status</a></li>
+              <li><a href="/tools/image-alt-checker">Image alt</a></li>
+              <li><a href="/tools/link-checker">Links</a></li>
+              <li><a href="/tools/word-count-checker">Word count</a></li>
+              <li><a href="/tools/hreflang-checker">hreflang</a></li>
+              <li><a href="/tools/deprecated-markup-checker">Deprecated HTML</a></li>
+              <li><a href="/tools/robots-txt-checker">robots.txt</a></li>
+              <li><a href="/tools/xml-sitemap-checker">XML sitemap</a></li>
+              <li><a href="/tools/redirect-checker">Redirects</a></li>
+              <li><a href="/tools">All tools</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-5">
+            <div class="border rounded p-3 bg-body h-100">
+              <h3 class="h6">
+                <i class="bi bi-shield-lock" aria-hidden="true"></i> Keep them anywhere
+              </h3>
+              <p class="small text-body-secondary mb-2" id="account-hint">
+                Right now your tabs are tied to this browser. Sign in with your email and they follow your account
+                on any device.
+              </p>
+              <button type="button" class="btn btn-sm btn-outline-primary" id="start-signin">
+                <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i> Sign in
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="d-flex align-items-center justify-content-between gap-2 mb-2">
+          <h3 class="h6 mb-0">
+            <i class="bi bi-clock-history" aria-hidden="true"></i> Saved audits
+          </h3>
+          <button type="button" class="btn btn-sm btn-outline-secondary" id="refresh-me" title="Refresh">
+            <i class="bi bi-arrow-clockwise" aria-hidden="true"></i> Refresh
+          </button>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle mb-0">
+            <thead>
+              <tr>
+                <th scope="col">URL</th>
+                <th scope="col" class="text-end">Score</th>
+                <th scope="col">When</th>
+                <th scope="col"><span class="visually-hidden">Actions</span></th>
+              </tr>
+            </thead>
+            <tbody id="history-rows">
+              <tr><td colspan="4" class="text-body-secondary small">Sign in to see every audit you have run.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-top py-3 mt-auto">
+    <div class="container app-container d-flex flex-wrap justify-content-between align-items-start gap-3">
+      <div class="small">
+        <div class="text-body-secondary">
+          <img src="/icon.svg" alt="" width="16" height="16" class="align-text-bottom" aria-hidden="true" /> PageAudit · Technical SEO diagnostics
+        </div>
+        <p class="mb-0 mt-2">
+          <a href="/tools"><i class="bi bi-wrench-adjustable" aria-hidden="true"></i> Free SEO tools</a>
+        </p>
+        <p class="mb-0 mt-2 text-body-secondary" id="agent-resource-hub">
+          <i class="bi bi-robot" aria-hidden="true"></i>
+          <strong class="text-body">Agent resource hub</strong> —
+          machine-readable index at
+          <a href="/api/" target="_blank" rel="noopener"><code>/api/</code></a>,
+          <a href="/llms.txt" target="_blank" rel="noopener"><code>/llms.txt</code></a>,
+          <a href="/openapi.json" target="_blank" rel="noopener"><code>/openapi.json</code></a>.
+          Human browse:
+          <button type="button" class="btn btn-link btn-sm p-0 align-baseline" id="open-api-hub-footer">API catalog</button>.
+        </p>
+      </div>
+      <button type="button" class="btn btn-outline-secondary btn-sm" id="open-support">
+        <i class="bi bi-life-preserver" aria-hidden="true"></i> Contact support
+      </button>
+    </div>
+  </footer>
+  <!-- New / rename tab modal -->
+  <div class="modal fade" id="tab-modal" tabindex="-1" aria-labelledby="tab-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 class="modal-title h5" id="tab-modal-title">
+              <i class="bi bi-plus-lg" aria-hidden="true"></i> New audit
+            </h2>
+            <p class="small text-body-secondary mb-0" id="tab-modal-sub">
+              The page opens in its own tab and stays saved to your account.
+            </p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="tab-form" class="row g-3">
+            <div class="col-12" id="tab-url-field">
+              <label class="form-label" for="tab-url">Page URL</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-link-45deg" aria-hidden="true"></i></span>
+                <input id="tab-url" class="form-control" type="text" required placeholder="https://example.com/pricing" autocomplete="url" />
+              </div>
+              <div class="form-text">http/https only. Public pages — local and private addresses are rejected.</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="tab-alias">Tab name <span class="text-body-secondary">(optional)</span></label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-tag" aria-hidden="true"></i></span>
+                <input id="tab-alias" class="form-control" type="text" maxlength="60" placeholder="Defaults to the domain" />
+              </div>
+            </div>
+            <div id="tab-modal-msg" class="col-12 alert alert-danger py-2 mb-0" hidden></div>
+            <div class="col-12 d-flex flex-wrap gap-2">
+              <button type="submit" class="btn btn-primary" id="tab-submit">
+                <i class="bi bi-play-fill" aria-hidden="true"></i> Open &amp; audit
+              </button>
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                <i class="bi bi-x-lg" aria-hidden="true"></i> Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Verification modal (Turnstile) -->
+  <div class="modal fade" id="verify-modal" tabindex="-1" aria-labelledby="verify-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 class="modal-title h5" id="verify-title">
+              <i class="bi bi-shield-check" aria-hidden="true"></i> Quick check
+            </h2>
+            <p class="small text-body-secondary mb-0">
+              The first audit is free. After that we ask for a one-tap check so the tool
+              isn't used to hammer other people's sites.
+            </p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="turnstile-slot" id="verify-slot"></div>
+          <div id="verify-msg" class="alert alert-danger py-2 mt-3 mb-0" hidden></div>
+          <p class="small text-body-secondary mt-3 mb-0">
+            One check covers the next few minutes of audits.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Support modal -->
+  <!--
+    Modal da API. O conteúdo NÃO fica escrito aqui: é buscado de GET /api/ ao abrir.
+    O catálogo mora em src/lib/apidocs.js e alimenta /api/, /openapi.json e /llms.txt;
+    uma cópia em HTML divergiria na primeira rota nova.
+  -->
+  <div class="modal fade" id="api-modal" tabindex="-1" aria-labelledby="api-title" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 class="modal-title h5" id="api-title">
+              <i class="bi bi-braces-asterisk" aria-hidden="true"></i> API
+            </h2>
+            <p class="small text-body-secondary mb-0">
+              Esta interface é a versão para humanos. O cliente principal é agente de IA —
+              tudo que você vê aqui tem endpoint equivalente.
+            </p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="api-modal-body">
+          <div class="text-body-secondary small">Loading…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="support-modal" tabindex="-1" aria-labelledby="support-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 class="modal-title h5" id="support-title">
+              <i class="bi bi-life-preserver" aria-hidden="true"></i> Contact support
+            </h2>
+            <p class="small text-body-secondary mb-0">We read every message and reply by email.</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="support-form-view">
+            <form id="contact-form" class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="c-name">Name</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person" aria-hidden="true"></i></span>
+                  <input id="c-name" name="name" class="form-control" type="text" required maxlength="120" autocomplete="name" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="c-email">Email</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-envelope" aria-hidden="true"></i></span>
+                  <input id="c-email" name="email" class="form-control" type="email" required maxlength="200" autocomplete="email" />
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="c-msg">Message</label>
+                <textarea id="c-msg" name="message" class="form-control" rows="5" required maxlength="4000"></textarea>
+              </div>
+              <div class="hp" aria-hidden="true">
+                <label>Website</label>
+                <input type="text" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+              <input type="hidden" id="form-ts" name="form_ts" value="" />
+              <div class="col-12 turnstile-slot" id="turnstile-slot"></div>
+              <div id="contact-msg" class="col-12 alert alert-danger py-2 mb-0" hidden></div>
+              <div class="col-12 d-flex flex-wrap gap-2">
+                <button type="submit" class="btn btn-primary" id="contact-btn">
+                  <i class="bi bi-send" aria-hidden="true"></i> Send message
+                </button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                  <i class="bi bi-x-lg" aria-hidden="true"></i> Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+          <div id="support-ok-view" class="text-center py-4" hidden>
+            <i class="bi bi-check-circle text-success display-6" aria-hidden="true"></i>
+            <h3 class="h5 mt-3">Thank you</h3>
+            <p class="text-body-secondary">Your message was sent. We’ll get back to you by email.</p>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+              <i class="bi bi-check2" aria-hidden="true"></i> Close
+            </button>
+          </div>
+          <div id="support-err-view" class="text-center py-4" hidden>
+            <i class="bi bi-exclamation-triangle text-danger display-6" aria-hidden="true"></i>
+            <h3 class="h5 mt-3">Couldn’t send</h3>
+            <p class="text-body-secondary" id="support-err-text">Something went wrong. Please try again.</p>
+            <div class="d-flex justify-content-center gap-2 flex-wrap">
+              <button type="button" class="btn btn-primary" id="support-retry">
+                <i class="bi bi-arrow-repeat" aria-hidden="true"></i> Try again
+              </button>
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                <i class="bi bi-x-lg" aria-hidden="true"></i> Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Auth modal -->
+  <div class="modal fade" id="auth-modal" tabindex="-1" aria-labelledby="auth-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 class="modal-title h5" id="auth-title">
+              <i class="bi bi-shield-lock" aria-hidden="true"></i> Sign in
+            </h2>
+            <p class="small text-body-secondary mb-0">Email code — no password. Your open tabs move to your account.</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="auth-email-step" class="row g-3">
+            <div class="col-12">
+              <div class="alert alert-primary d-flex align-items-start gap-2 py-2 mb-0 small" id="auth-trial-offer">
+                <i class="bi bi-lightning-charge fs-5" aria-hidden="true"></i>
+                <span><strong>New here?</strong> Confirm your email and your account gets
+                <strong>90 days of full access — free</strong>. No card, no wallet. Tabs beyond the
+                free tier included.</span>
+              </div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="auth-email">Email</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope" aria-hidden="true"></i></span>
+                <input id="auth-email" class="form-control" type="email" required maxlength="200" autocomplete="email" placeholder="you@example.com" />
+              </div>
+            </div>
+            <div class="col-12 d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-primary" id="auth-send">
+                <i class="bi bi-send" aria-hidden="true"></i> Send code
+              </button>
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                <i class="bi bi-x-lg" aria-hidden="true"></i> Cancel
+              </button>
+            </div>
+          </div>
+          <div id="auth-code-step" class="row g-3" hidden>
+            <div class="col-12">
+              <label class="form-label" for="auth-code">6-digit code</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-key" aria-hidden="true"></i></span>
+                <input id="auth-code" class="form-control" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="123456" />
+              </div>
+            </div>
+            <div class="col-12 d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-primary" id="auth-verify">
+                <i class="bi bi-check2-circle" aria-hidden="true"></i> Verify &amp; sign in
+              </button>
+              <button type="button" class="btn btn-outline-secondary" id="auth-back">
+                <i class="bi bi-arrow-left" aria-hidden="true"></i> Back
+              </button>
+            </div>
+          </div>
+          <div id="auth-msg" class="alert mt-3 mb-0 py-2" hidden></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- x402 paywall -->
+  <div class="modal fade" id="paywall-modal" tabindex="-1" aria-labelledby="paywall-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 class="modal-title h5" id="paywall-title">
+              <i class="bi bi-wallet2" aria-hidden="true"></i> Payment required
+              <span class="badge text-bg-success ms-1" id="paywall-mode-badge" hidden>Live</span>
+            </h2>
+            <p class="small text-body-secondary mb-0" id="paywall-subtitle">
+              Free tier included. Extra usage billed in <strong>USDC</strong> via x402 on Base — live numbers from <code>/api/billing</code>.
+            </p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-primary d-flex flex-wrap justify-content-between align-items-center gap-2 py-2 mb-3" id="paywall-trial">
+            <span class="small">
+              <i class="bi bi-lightning-charge" aria-hidden="true"></i> Rather not pay?
+              <strong>Sign in with email and confirm it — 90 days of full access, free.</strong>
+            </span>
+            <button type="button" class="btn btn-sm btn-outline-primary" id="paywall-signin-btn">
+              <i class="bi bi-box-arrow-in-right" aria-hidden="true"></i> Sign in
+            </button>
+          </div>
+          <div id="paywall-reasons" class="mb-3"></div>
+          <div class="row g-3 mb-3">
+            <div class="col-md-4">
+              <div class="small text-body-secondary">Price</div>
+              <div class="fs-5 fw-semibold" id="paywall-price">—</div>
+            </div>
+            <div class="col-md-4">
+              <div class="small text-body-secondary">Network</div>
+              <div class="fw-semibold" id="paywall-network">—</div>
+            </div>
+            <div class="col-md-4">
+              <div class="small text-body-secondary">Asset</div>
+              <div class="fw-semibold">USDC</div>
+            </div>
+          </div>
+          <div class="d-grid gap-2 mb-3">
+            <button type="button" class="btn btn-warning btn-lg" id="paywall-homolog-btn-main" hidden>
+              <i class="bi bi-magic" aria-hidden="true"></i> Simular pagamento (homolog · sem chain)
+            </button>
+            <button type="button" class="btn btn-primary btn-lg" id="paywall-wallet-btn">
+              <i class="bi bi-wallet2" aria-hidden="true"></i> Connect wallet &amp; pay
+            </button>
+            <div class="d-flex flex-wrap gap-2 justify-content-center small">
+              <a id="paywall-link-metamask" href="https://metamask.io/download/" target="_blank" rel="noopener">MetaMask</a>
+              <span class="text-body-secondary">·</span>
+              <a id="paywall-link-coinbase" href="https://www.coinbase.com/wallet" target="_blank" rel="noopener">Coinbase Wallet</a>
+              <span class="text-body-secondary">·</span>
+              <a id="paywall-link-base" href="https://base.org/app" target="_blank" rel="noopener">Base App</a>
+            </div>
+          </div>
+          <div class="row g-3 align-items-start mb-3">
+            <div class="col-sm-auto text-center">
+              <div id="paywall-qr" class="border rounded p-2 bg-white d-inline-block" style="min-width:168px;min-height:168px;line-height:0"></div>
+              <div class="small text-body-secondary mt-1" id="paywall-qr-hint">Scan with MetaMask / Rabby<br>(USDC on Base)</div>
+            </div>
+            <div class="col">
+              <label class="form-label small text-body-secondary mb-1">Receive address</label>
+              <div class="input-group input-group-sm mb-2">
+                <code id="paywall-payto" class="form-control font-monospace text-break" style="height:auto">—</code>
+                <button type="button" class="btn btn-outline-secondary" id="paywall-copy-payto"><i class="bi bi-clipboard"></i></button>
+              </div>
+              <label class="form-label small text-body-secondary mb-1">Payment URI (EIP-681)</label>
+              <div class="input-group input-group-sm">
+                <code id="paywall-eip681" class="form-control font-monospace text-break" style="height:auto;max-height:4.5rem;overflow:auto;font-size:.7rem">—</code>
+                <button type="button" class="btn btn-outline-secondary" id="paywall-copy-eip681"><i class="bi bi-clipboard"></i></button>
+              </div>
+            </div>
+          </div>
+          <div id="paywall-status" class="alert py-2 small mb-3" hidden></div>
+          <div class="alert alert-warning small py-2" id="paywall-homolog-note" hidden>
+            <strong>DEV · Base Sepolia.</strong>
+            <strong>Simular</strong> fecha o loop sem chain (valida o ticket).
+            Connect wallet gasta USDC de testnet da conta conectada.
+          </div>
+          <details class="small">
+            <summary class="text-body-secondary">Advanced — payment requirements (JSON)</summary>
+            <div class="input-group input-group-sm mt-2">
+              <code id="paywall-accepts" class="form-control font-monospace" style="height:auto;max-height:9rem;overflow:auto;white-space:pre-wrap">—</code>
+              <button type="button" class="btn btn-outline-secondary" id="paywall-copy-accepts"><i class="bi bi-clipboard"></i></button>
+            </div>
+          </details>
+        </div>
+        <div class="modal-footer flex-wrap gap-2">
+          <a class="btn btn-outline-secondary btn-sm" id="paywall-faucet" href="https://faucet.circle.com/" target="_blank" rel="noopener" hidden>
+            <i class="bi bi-droplet"></i> Circle faucet
+          </a>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-warning" id="paywall-homolog-btn" hidden>
+            <i class="bi bi-magic"></i> Simular pagamento
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="/x402-paywall-dev.js"></script>
+  <script src="/x402-paywall-wallet.js"></script>
+  <script src="/x402-paywall-qr.js"></script>
+  <script src="/x402-paywall.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "PageAudit — Technical SEO page audit",
+  "short_name": "PageAudit",
+  "description": "Instant technical SEO check: title, meta description, Open Graph, Twitter cards, headings, canonical and JSON-LD. Every URL you open stays as a saved tab.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#1a56db",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+# GERADO por scripts/monta-seo.mjs — fonte: seo.config.js. Não edite.
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+Allow: /tools
+Allow: /llms.txt
+Allow: /openapi.json
+Allow: /mcp
+Allow: /api/
+Allow: /api/guest
+Allow: /api/audit
+Allow: /api/audits
+Allow: /api/tabs
+Allow: /api/billing
+Allow: /api/gate
+Disallow: /api/visit
+Disallow: /api/auth
+Disallow: /api/me
+Disallow: /api/metrics
+Disallow: /r/
+
+Sitemap: https://pageaudit.online/sitemap.xml
+
+# Open Knowledge Format (OKF) v0.1 — bundle markdown para agentes de IA
+# Spec: https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md
+# Entrada: https://pageaudit.online/okf/index.md

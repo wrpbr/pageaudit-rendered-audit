@@ -1,0 +1,20 @@
+{
+  "name": "pageaudit-rendered-audit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Compare PageAudit results from server HTML and a browser-rendered DOM.",
+  "repository": "https://github.com/wrpbr/pageaudit-rendered-audit",
+  "homepage": "https://pageaudit-rendered.pages.dev",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "typecheck": "node --check src/worker.js && node --check src/sandbox-browser.js && node --check src/rendered-preview.js && node --check src/pageaudit/comparison.js && node --check scripts/build.mjs && node --check scripts/check-build.mjs",
+    "validate": "npm run typecheck && npm test && npm run build && npm run check",
+    "dev": "npx --yes wrangler@4.118.0 pages dev dist"
+  }
+}
