@@ -8,6 +8,33 @@ the same PageAudit scoring rules to the resulting DOM.
 
 ![PageAudit server response and sandbox verification side by side](docs/demo.png)
 
+## Solari engineering challenge
+
+This project is a submission for [Harry Chow's Pinetree Research SWE challenge](https://x.com/harrychow_/status/2094437473912844480?s=20),
+built from the [Solari cookbook](https://github.com/solari-sdk/solari-cookbook). The challenge asks
+for a real browser, sandbox, or desktop use case—not a renamed example. PageAudit uses the browser
+runtime to solve a concrete auditing blind spot: server HTML and the page a visitor sees can be
+materially different.
+
+The included TodoMVC run moves from an HTTP score of **22** to a rendered score of **40** and
+changes four checks. The site did not improve between runs; the sandbox exposed content that only
+exists after JavaScript executes.
+
+## How PageAudit uses Solari
+
+1. The Worker creates a short-lived isolated browser session through Solari's Sessions API.
+2. It connects to the returned CDP endpoint through a Cloudflare Worker WebSocket upgrade.
+3. A fresh target opens the submitted URL, waits for document readiness and DOM quiet, and handles
+   a standard consent action when present.
+4. The rendered DOM is serialized and passed to the exact same PageAudit analyzer as the original
+   HTTP response.
+5. The target and remote session are closed in `finally`, including failure and timeout paths.
+
+The provider-specific integration is isolated in
+[`src/sandbox-browser.js`](src/sandbox-browser.js). The product UI deliberately says “Sandbox
+verification”: users see the capability and the evidence, while the implementation remains easy
+to test or replace.
+
 ## What the comparison means
 
 | Pass | Input | What it reveals |
@@ -98,6 +125,12 @@ test/                     worker, browser-adapter, UI, and analyzer tests
 The demo is deployed to Cloudflare Pages by CI. Production pins an exact source commit and stores
 `SANDBOX_API_KEY` as a Pages secret. `version.json` records the source and deployment commits used by
 the live build.
+
+## Submission links
+
+- Live demo: [pageaudit-rendered.pages.dev](https://pageaudit-rendered.pages.dev)
+- Source: [github.com/wrpbr/pageaudit-rendered-audit](https://github.com/wrpbr/pageaudit-rendered-audit)
+- Challenge: [x.com/harrychow_/status/2094437473912844480](https://x.com/harrychow_/status/2094437473912844480?s=20)
 
 ## License
 

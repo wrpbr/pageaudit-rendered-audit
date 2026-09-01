@@ -31,5 +31,7 @@ assert.doesNotMatch(`${html}\n${browser}`, /Compare with Solari|Without Solari|W
 assert.doesNotMatch(`${browser}\n${worker}`, /slr_live_[A-Za-z0-9_-]{8,}/);
 assert.match(readme, /https:\/\/pageaudit-rendered\.pages\.dev/);
 assert.match(readme, /github\.com\/wrpbr\/pageaudit-rendered-audit/);
+assert.match(readme, /github\.com\/solari-sdk\/solari-cookbook/);
+assert.match(readme, /How PageAudit uses Solari/);
 
 process.stdout.write("build contract: ok\n");
